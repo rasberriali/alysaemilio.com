@@ -1,9 +1,15 @@
-
+import{useState} from 'react'
+import React, { ChangeEvent, FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input'
+import { Label } from "../components/ui/label"
 import about from "../assets/icons/about.svg"
-import experience from "../assets/icons/experience.svg"
+import experience from "../assets/icons/experience.svg" 
+import projectss from "../assets/icons/projects.svg"
+import connect from "../assets/icons/connect.svg"
+import certifications from "../assets/icons/certifications.svg"
 import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
 import thirdproject from "../assets/projectsImages/monitor.png"
@@ -13,26 +19,96 @@ import instagram from "../assets/logo/instagram.png"
 
 export default function BentoPortfolio() {
 
+  const [formData, setFormData] = useState({
+    email: '',
+    feedback: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const templateParams = { ...formData };
+
+      await emailjs.send(
+        'service_lrqbf18',
+        'template_di57wfk',
+        templateParams,
+        'ITmUKPndfKZTeDw4i'
+      );
+
+      setSubmitStatus('success');
+      setFormData({
+        email: '',
+        feedback: ''
+      });
+    } catch (error) {
+      console.error('Email send error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+
+const techColors: Record<string, string> = {
+  '#MongoDB': '#46AEF0',
+  '#DynamoDB': '#4053D6',
+  'Express.Js': '#29CD83',
+  '#React': '#D53B6A',
+  '#Node.Js': '#7031ef',
+};
+
+
 const projects = [
   {
     image: firstproject,
     title: "BAGA.NET",
     description:  "I design and develop the frontend for BAGA.NET, an ongoing thesis project.",
+    tech:['#MongoDB','Express.Js','#React','#Node.Js'],
   },
    {
     image: secondproject,
     title: "Airizz",
     description:  "I designed here the UI/UX for air quality monitoring and contributed to the backend using DynamoDB, APIs, and Lambda.",
+    tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
   },
    {
     image: thirdproject,
     title: "dotGenerate",
     description:  "This is a simple personal project, created to enhance my MERN stack skills and perform CRUD functionalities. It generates project ideas to inspire developers.",
+     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
   },
+]
 
+const certs = [
+  {
+    title: "Javascript Essential 1",
+    subtitle: "Statement of Achievement"
+  },
+  {
+    title: "Javascript Essential 2",
+    subtitle: "Statement of Achievement"
+  },
+  {
+    title: "Intro to MERN Stack",
+    subtitle: "Statement of Achievement"
+  },
 ]
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-6 grid-rows-5 gap-4 mt-10  ">
+    <div className="container grid grid-cols-1 md:grid-cols-6 grid-rows-5 gap-4 mt-10  ">
      {/* About */}
 <Card className="md:col-span-4 row-span-4 flex flex-col justify-between">
   <div>
@@ -125,11 +201,14 @@ const projects = [
       {/* Projects */}
          <Card className="md:col-span-8">
         <CardContent className="space-y-4 ">
-          <h2 className="text-xl font-bold">Projects</h2>
+            <div className='flex gap-2'>
+        <img src={projectss} alt=""></img>
+        <h2 className="text-xl font-bold">Projects</h2>
+      </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {projects.map((projects,index) => (
               <Card key={index}>
-                <CardContent className=''>
+                <CardContent className='flex flex-col space-y-2'>
                   <img
                     src={projects.image}
                     alt="Project Thumbnail"
@@ -139,6 +218,24 @@ const projects = [
                   <p className="text-sm text-gray-500">
                    {projects.description}
                   </p>
+                 <div className="tech-stack">
+                    {projects.tech.map((techItem, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          backgroundColor: techColors[techItem] || '#888',
+                          color: 'white',
+                          padding: '4px',
+                          borderRadius: '6px',
+                          marginRight: '6px',
+                          marginTop:'4px',
+                          display: 'inline-block',
+                        }}
+                      >
+                       <h1 className='xl:text-sm text-xs font-semibold '>{techItem}</h1> 
+                      </span>
+                    ))}
+                  </div>
                 </CardContent>
            </Card>
 
@@ -151,19 +248,65 @@ const projects = [
 
       {/* Connect */}
       <Card className="md:col-span-4">
-        <CardContent className="space-y-4">
-          <h2 className="text-xl font-bold">Connect</h2>
-          <p>
+        <CardContent className="">
+            <div className='flex gap-2 mb-4'>
+        <img src={connect} alt=""></img>
+        <h2 className="text-xl font-bold">Connect</h2>
+      </div>
+          <p className='text-sm leading-6 mb-4'>
             I'm currently looking for job opportunities. If you have any suggestions or
             feedback, I’d be happy to hear from you!
           </p>
-          <Input type="email" placeholder="Email" />
-          <Input type="text" placeholder="Feedback" />
-          <Button className="w-full">Submit</Button>
-          <div className="flex space-x-4 pt-2">
-            <a href="#"><img src={linkedin} alt="LinkedIn" className="h-6" /></a>
-            <a href="#"><img src={github} alt="Instagram" className="h-6" /></a>
-            <a href="#"><img src={instagram} alt="GitHub" className="h-6" /></a>
+
+        <form onSubmit={handleSubmit} className="">
+          <Label 
+            htmlFor="email" variant="muted">Email</Label>
+          <Input 
+            type="email"
+            name="email" 
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+            className='bg-[#F3F3F3] border-0' />
+
+          <Label htmlFor="text"  variant="muted">Feedback</Label>
+          <Input 
+            type="text"
+            name="feedback"
+            onChange={handleInputChange}
+            value={formData.feedback}
+            required
+            className='bg-[#F3F3F3] border-0' />
+
+          <Button
+            type="submit"
+            variant="submit"
+            // onClick={handleSubmit}
+            disabled={isSubmitting}
+            size="w">
+            {isSubmitting ? 'Sending...' : 'Submit'}
+            </Button>
+
+          {submitStatus === 'success' && (
+          <div className="text-green-600 text-sm mt-2">Message sent successfully!</div>
+        )}
+        {submitStatus === 'error' && (
+          <div className="text-red-600 text-sm mt-2">Failed to send message. Please try again.</div>
+        )}
+        </form>
+
+
+           <Label htmlFor="text" variant="muted" className='mt-4'>Social Links</Label>
+          <div className="flex flex-row justify-between space-x-6 ">
+            <div className='flex items-center justify-center p-2 bg-[#F3F3F3] rounded-lg w-1/3'><a href="https://www.linkedin.com/in/alysa-juliana-emilio-33a195227/"target="_blank" 
+            rel="noopener noreferrer"
+          ><img src={linkedin} alt="LinkedIn" className="h-8" /></a></div>
+            <div className='flex items-center justify-center p-2 bg-[#F3F3F3] rounded-lg w-1/3'><a href="https://www.instagram.com/alysaemilio/"target="_blank" 
+          rel="noopener noreferrer"
+        ><img src={github} alt="Instagram" className="h-8" /></a></div>
+            <div className='flex items-center justify-center p-2 bg-[#F3F3F3] rounded-lg w-1/3'><a href="https://github.com/rasberriali"target="_blank" 
+        rel="noopener noreferrer"
+      ><img src={instagram} alt="GitHub" className="h-8" /></a></div>
           </div>
         </CardContent>
       </Card>
@@ -171,21 +314,23 @@ const projects = [
       {/* Certifications */}
       <Card className="md:col-span-3">
         <CardContent className="space-y-2">
-          <h2 className="text-xl font-bold">Certifications</h2>
-          <ul className="space-y-1">
-            <li>
-              <strong>JavaScript Essential 1</strong>
-              <br /> Statement of Achievement
-            </li>
-            <li>
-              <strong>JavaScript Essential 2</strong>
-              <br /> Statement of Achievement
-            </li>
-            <li>
-              <strong>Intro to MERN Stack</strong>
-              <br /> Statement of Achievement
-            </li>
-          </ul>
+            <div className='flex gap-2'>
+        <img src={certifications} alt=""></img>
+        <h2 className="text-xl font-bold">Certifications</h2>
+      </div>
+          <div className="space-y-4 mt-4">
+            {certs.map((certs,index) => (
+            <div className='flex flex-col justify-between min-h-26 bg-[#F3F3F3] p-4 rounded-[10px]' key={index}>
+              <div className=''>
+                <h1 className='font-bold'>{certs.title}</h1>
+                <h2 className='text-xs'> {certs.subtitle}</h2>
+              </div>
+              <div className='text-end text-xs'>View</div>
+              
+
+            </div>
+            ))}
+          </div>
         </CardContent>
       </Card>
     </div>
