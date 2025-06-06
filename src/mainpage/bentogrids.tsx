@@ -1,5 +1,5 @@
-import{useState} from 'react'
-import React, { ChangeEvent, FormEvent } from 'react';
+import { useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
