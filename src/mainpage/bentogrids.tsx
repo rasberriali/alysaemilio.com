@@ -95,27 +95,6 @@ const projects = [
   },
 ]
 
-const subprojects = [
-  {
-    image: firstproject,
-    title: "BAGA.NET",
-    description:  "I design and develop the frontend for BAGA.NET, an ongoing thesis project.",
-    tech:['#MongoDB','Express.Js','#React','#Node.Js'],
-  },
-   {
-    image: secondproject,
-    title: "Airizz",
-    description:  "I designed here the UI/UX for air quality monitoring and contributed to the backend using DynamoDB, APIs, and Lambda.",
-    tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
-  },
-   {
-    image: thirdproject,
-    title: "dotGenerate",
-    description:  "This is a simple personal project, created to enhance my MERN stack skills and perform CRUD functionalities. It generates project ideas to inspire developers.",
-     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
-  },
-]
-
 const certs = [
   {
     title: "Javascript Essential 1",
