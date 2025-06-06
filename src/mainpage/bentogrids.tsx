@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { ChangeEvent, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { Card, CardContent } from '../components/ui/card';
@@ -16,6 +17,7 @@ import thirdproject from "../assets/projectsImages/monitor.png"
 import linkedin from "../assets/logo/linkedin.png"
 import github from "../assets/logo/github2.png"
 import instagram from "../assets/logo/instagram.png"
+import arrow from "../assets/icons/up-arrow.svg"
 
 export default function BentoPortfolio() {
 
@@ -73,6 +75,27 @@ const techColors: Record<string, string> = {
 
 
 const projects = [
+  {
+    image: firstproject,
+    title: "BAGA.NET",
+    description:  "I design and develop the frontend for BAGA.NET, an ongoing thesis project.",
+    tech:['#MongoDB','Express.Js','#React','#Node.Js'],
+  },
+   {
+    image: secondproject,
+    title: "Airizz",
+    description:  "I designed here the UI/UX for air quality monitoring and contributed to the backend using DynamoDB, APIs, and Lambda.",
+    tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
+  },
+   {
+    image: thirdproject,
+    title: "dotGenerate",
+    description:  "This is a simple personal project, created to enhance my MERN stack skills and perform CRUD functionalities. It generates project ideas to inspire developers.",
+     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
+  },
+]
+
+const subprojects = [
   {
     image: firstproject,
     title: "BAGA.NET",
@@ -201,10 +224,16 @@ const certs = [
       {/* Projects */}
          <Card className="md:col-span-8">
         <CardContent className="space-y-4 ">
+          <div className='flex flex-row justify-between'>
             <div className='flex gap-2'>
-        <img src={projectss} alt=""></img>
-        <h2 className="text-xl font-bold">Projects</h2>
-      </div>
+              <img src={projectss} alt=""></img>
+              <h2 className="text-xl font-bold">Projects</h2>
+            </div>
+            <Link to="/projects" className='flex flex-row justify-end items-center gap-1 cursor-pointer'>
+                 <div className='text-xs'>View All</div>
+                 <img src={arrow} alt="" className='h-4'></img>
+                </Link>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {projects.map((projects,index) => (
               <Card key={index}>
@@ -322,17 +351,21 @@ const certs = [
             {certs.map((certs,index) => (
             <div className='flex flex-col justify-between min-h-26 bg-[#F3F3F3] p-4 rounded-[10px]' key={index}>
               <div className=''>
-                <h1 className='font-bold'>{certs.title}</h1>
-                <h2 className='text-xs'> {certs.subtitle}</h2>
+                <h1 className='font-bold tracking-wide '>{certs.title}</h1>
+                <h2 className='text-sm font-light'> {certs.subtitle}</h2>
               </div>
-              <div className='text-end text-xs'>View</div>
-              
-
-            </div>
+              <div className='flex flex-row justify-end items-center gap-1 cursor-pointer'>
+                 <div className='text-xs'>View</div>
+                 <img src={arrow} alt="" className='h-4'></img>
+                </div>
+              </div>
             ))}
           </div>
         </CardContent>
       </Card>
+
+          
+      
     </div>
   );
 }
