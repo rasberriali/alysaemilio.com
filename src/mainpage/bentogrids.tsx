@@ -6,18 +6,12 @@ import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input'
 import { Label } from "../components/ui/label"
-// import about from "../assets/icons/about.svg"
-import experience from "../assets/icons/experience.svg" 
-import projectss from "../assets/icons/projects.svg"
-import connect from "../assets/icons/connect.svg"
-import certifications from "../assets/icons/certifications.svg"
 import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
 import thirdproject from "../assets/projectsImages/monitor.png"
 import linkedin from "../assets/logo/linkedin.png"
 import github from "../assets/logo/github2.png"
 import instagram from "../assets/logo/instagram.png"
-import arrow from "../assets/icons/up-arrow.svg"
 import js1 from "../assets/files/js1.jpg";
 import js2 from "../assets/files/js2.png";
 import mern from "../assets/files/Mern.jpg";

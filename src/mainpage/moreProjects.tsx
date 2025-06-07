@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '../components/ui/card';
-import projectss from "../assets/icons/projects.svg"
 import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
 import thirdproject from "../assets/projectsImages/monitor.png"
-import backarrow from "../assets/icons/back-arrow.svg"
 
 function MoreProjects() {
     
