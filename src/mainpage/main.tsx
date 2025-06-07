@@ -5,15 +5,25 @@ import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
 
 function Main() {
-const [theme, setTheme] = useState("winter");
+const [theme, setTheme] = useState(() => {
+  // Get stored theme or default to 'winter'
+  return localStorage.getItem("theme") || "winter";
+});
+
+// Sync theme with DaisyUI and localStorage
+useEffect(() => {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+}, [theme]);
+
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
   return (
     <div className="max-w-screen-lg mx-auto px-4 py-8 transition-all duration-500 ease-in-out">
-      <div className="flex flex-row  xl:gap-3 gap-4  items-center">
-        <div className="xl:w-1/5 w-2/5">
+      <div className="flex flex-row  xl:gap-3 gap-4  items-center 0">
+        <div className="md:w-1/5 w-2/5">
           <img
             src={profile}
             alt="Profile"
@@ -24,13 +34,9 @@ const [theme, setTheme] = useState("winter");
         <div className="flex-1 flex-row justify-between items-start  dark:text-neutral-200 ">
           <div className="flex flex-col justify-center xl:space-y-3 space-y-2">
             <div className="flex flex-row justify-between items-center">
-            <h1 className="xl:text-2xl text-[18px] font-bold tracking-wide">
+            <h1 className="md:text-2xl text-[18px] font-bold tracking-wide">
               Alysa Emilio
             </h1>
-           
-
-
-            
 
            <label className="toggle text-base-content">
             <input type="checkbox"  
@@ -60,7 +66,7 @@ const [theme, setTheme] = useState("winter");
               Bs Computer Engineer and an aspiring Fullstack Developer
             </h3>
 
-            <div className="grid grid-cols-2 grid-rows-1 gap-3 xl:w-2/5 mt-2 ">
+            <div className="grid grid-cols-2 grid-rows-1 gap-3 md:w-2/5 mt-2 ">
             <a
               href="mailto:alysaemilio@gmail.com"
               target="_blank"
@@ -74,7 +80,7 @@ const [theme, setTheme] = useState("winter");
             </a>
 
                 
-                 <div className="flex flex-row cursor-pointer xl:py-2 py-1 px-2 gap-2 ring ring-blue-100 text-center justify-center items-center rounded-[5px]">
+                 <div className="flex flex-row cursor-pointer xl:py-2 py-1 px-2 gap-2 border dark:border-blue-100/20 border-blue-100 text-center justify-center items-center rounded-[5px]">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>

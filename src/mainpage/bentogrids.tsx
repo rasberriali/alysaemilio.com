@@ -159,7 +159,7 @@ const certs = [
 
 
       {/* Experience */}
-      <Card className="md:col-span-3 row-span-5 dark:bg-neutral-800/40">
+      <Card className="md:col-span-2 row-span-5 dark:bg-neutral-800/40">
         <CardContent className="space-y-4">
            <div className='flex gap-2'>
         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +211,7 @@ const certs = [
       </Card>
 
       {/* Projects */}
-         <Card className="md:col-span-7 dark:bg-neutral-800/40 ">
+         <Card className="md:col-span-6 dark:bg-neutral-800/40 ">
         <CardContent className="space-y-4 ">
           <div className='flex flex-row justify-between'>
             <div className='flex gap-2'>
@@ -354,7 +354,7 @@ const certs = [
       </Card>
 
       {/* Certifications */}
-      <Card className="md:col-span-3 dark:bg-neutral-800/40">
+      <Card className="md:col-span-2 dark:bg-neutral-800/40">
         <CardContent className="space-y-2">
             <div className='flex gap-2'>
         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
