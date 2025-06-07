@@ -4,7 +4,7 @@ import MoreProjects from "./mainpage/moreProjects"
 
 function App() {
   return (
-    <div className='inter '>
+    <div className='inter'>
       <Router>
         <Routes>
           <Route path="/" element={<Main/>}/>

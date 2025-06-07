@@ -18,6 +18,9 @@ import linkedin from "../assets/logo/linkedin.png"
 import github from "../assets/logo/github2.png"
 import instagram from "../assets/logo/instagram.png"
 import arrow from "../assets/icons/up-arrow.svg"
+import js1 from "../assets/files/js1.jpg";
+import js2 from "../assets/files/js2.png";
+import mern from "../assets/files/Mern.jpg";
 
 export default function BentoPortfolio() {
 
@@ -78,7 +81,7 @@ const projects = [
   {
     image: firstproject,
     title: "BAGA.NET",
-    description:  "I design and develop the frontend for BAGA.NET, an ongoing thesis project.",
+    description:  "I design and develop here our system for thesis.",
     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
   },
    {
@@ -98,21 +101,24 @@ const projects = [
 const certs = [
   {
     title: "Javascript Essential 1",
-    subtitle: "Statement of Achievement"
+    subtitle: "Statement of Achievement",
+    certsImages: js1,
   },
   {
     title: "Javascript Essential 2",
-    subtitle: "Statement of Achievement"
+    subtitle: "Statement of Achievement",
+    certsImages: js2,
   },
   {
     title: "Intro to MERN Stack",
-    subtitle: "Statement of Achievement"
+    subtitle: "Certificate of Completion",
+    certsImages: mern,
   },
 ]
   return (
-    <div className="container grid grid-cols-1 md:grid-cols-6 grid-rows-5 gap-4 mt-10  ">
+    <div className="container grid grid-cols-1 md:grid-cols-6 grid-rows-5 gap-4 mt-10 mb-20">
      {/* About */}
-<Card className="md:col-span-4 row-span-4 flex flex-col justify-between">
+<Card className="md:col-span-4 row-span-4 flex flex-col justify-between dark:bg-neutral-800/40">
   <div>
     <CardContent className="space-y-4 ">
       <div className='flex gap-2'>
@@ -140,12 +146,12 @@ const certs = [
 </Card>
 
   {/* Mantra */}
- <Card className="row-start-5 md:col-span-4">
+ <Card className="row-start-5 md:col-span-4 dark:bg-neutral-800/40">
   <div>
     <CardContent className="">
       <p className="italic text-base text-blue-500 leading-6 ">
         "Empowered by faith, driven by discipline, refined by every line of code."
-        <br /><span className='flex justify-end text-sm text-gray-500'>-Mantra</span>
+        <br /><span className='flex justify-end text-xs text-gray-500'>- Daily motivation</span>
       </p>
     </CardContent>
   </div>
@@ -154,7 +160,7 @@ const certs = [
 
 
       {/* Experience */}
-      <Card className="md:col-span-3 row-span-5">
+      <Card className="md:col-span-3 row-span-5 dark:bg-neutral-800/40">
         <CardContent className="space-y-4">
            <div className='flex gap-2'>
         <img src={experience} alt=""></img>
@@ -165,7 +171,7 @@ const certs = [
     <span className="absolute -left-[30px] top-1 w-3 h-3 bg-blue-500 animate-pulse rounded-full border border-white"></span>
     <div className='flex flex-row justify-between items-center'>
       <strong>IT and Infrastructure</strong>
-      <div className='text-[10px] bg-blue-100 py-1 px-2 text-center rounded-full'>April 2025</div>
+      <div className='text-[10px] dark:bg-blue-500 bg-blue-100 py-1 px-2 text-center rounded-full text-black'>April 2025</div>
     </div> 
     <h1 className='text-xs mt-1'>Embedded Silicon Technology Solutions Corp.</h1>
     <p className='mt-4 text-sm leading-5'>
@@ -177,7 +183,7 @@ const certs = [
     <span className="absolute -left-[30px] top-1 w-3 h-3 bg-blue-500 animate-pulse rounded-full border border-white"></span>
     <div className='flex flex-row justify-between items-center'>
       <strong>Frontend Developer</strong>
-      <div className='text-[10px] bg-blue-100 py-1 px-2 text-center rounded-full'>January 2025</div>
+      <div className='text-[10px] dark:bg-blue-500 bg-blue-100 py-1 px-2 text-center rounded-full text-black'>January 2025</div>
     </div> 
     <h1 className='text-xs mt-1'>Befiend (FKA Edufied)</h1>
     <p className='mt-4 text-sm leading-5'>
@@ -189,7 +195,7 @@ const certs = [
     <span className="absolute -left-[30px] top-1 w-3 h-3 bg-blue-500 animate-pulse rounded-full border border-white"></span>
     <div className='flex flex-row justify-between items-center'>
       <strong>Freelancer</strong>
-      <div className='text-[10px] bg-blue-100 py-1 px-2 text-center rounded-full'>November 2022</div>
+      <div className='text-[10px] dark:bg-blue-500 bg-blue-100 py-1 px-2 text-center rounded-full text-black'>November 2022</div>
     </div> 
     <p className='mt-2 text-sm leading-5'>
       Catered various programming activities /projects using Java, Python, Django, and others.
@@ -201,7 +207,7 @@ const certs = [
       </Card>
 
       {/* Projects */}
-         <Card className="md:col-span-8">
+         <Card className="md:col-span-7 ">
         <CardContent className="space-y-4 ">
           <div className='flex flex-row justify-between'>
             <div className='flex gap-2'>
@@ -255,7 +261,7 @@ const certs = [
       </Card>
 
       {/* Connect */}
-      <Card className="md:col-span-4">
+      <Card className="md:col-span-4 dark:bg-neutral-800/40">
         <CardContent className="">
             <div className='flex gap-2 mb-4'>
         <img src={connect} alt=""></img>
@@ -275,7 +281,7 @@ const certs = [
             value={formData.email}
             onChange={handleInputChange}
             required
-            className='bg-[#F3F3F3] border-0' />
+            className='bg-[#F3F3F3] dark:bg-black/80 border-0' />
 
           <Label htmlFor="text"  variant="muted">Feedback</Label>
           <Input 
@@ -284,7 +290,7 @@ const certs = [
             onChange={handleInputChange}
             value={formData.feedback}
             required
-            className='bg-[#F3F3F3] border-0' />
+            className='bg-[#F3F3F3] dark:bg-black/80 border-0' />
 
           <Button
             type="submit"
@@ -320,7 +326,7 @@ const certs = [
       </Card>
 
       {/* Certifications */}
-      <Card className="md:col-span-3">
+      <Card className="md:col-span-3 dark:bg-neutral-800/40">
         <CardContent className="space-y-2">
             <div className='flex gap-2'>
         <img src={certifications} alt=""></img>
@@ -328,7 +334,7 @@ const certs = [
       </div>
           <div className="space-y-4 mt-4">
             {certs.map((certs,index) => (
-            <div className='flex flex-col justify-between min-h-26 bg-[#F3F3F3] p-4 rounded-[10px]' key={index}>
+            <div className='flex flex-col justify-between min-h-26 bg-[#F3F3F3] text-black  p-4 rounded-[10px]' key={index} onClick={() => window.open(certs.certsImages, "_blank")}>
               <div className=''>
                 <h1 className='font-bold tracking-wide '>{certs.title}</h1>
                 <h2 className='text-sm font-light'> {certs.subtitle}</h2>

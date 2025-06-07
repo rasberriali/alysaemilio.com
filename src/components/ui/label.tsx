@@ -11,7 +11,7 @@ const labelVariants = cva(
       variant: {
         primary: "text-base text-primary",
         secondary: "text-sm text-muted-foreground",
-        muted: "text-sm text-black font-normal mb-2",
+        muted: "text-sm  font-normal mb-2",
       },
     },
     defaultVariants: {

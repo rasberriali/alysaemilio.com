@@ -1,5 +1,8 @@
 @import "tailwindcss";
-
+@plugin "daisyui" {
+  themes: winter --default, halloween --prefersdark;
+}
+@custom-variant dark (&:where([data-theme=halloween], [data-theme=halloween] *));
 
 .inter{
   font-family: "Inter", sans-serif;
