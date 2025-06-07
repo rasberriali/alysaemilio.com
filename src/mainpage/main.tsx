@@ -49,11 +49,11 @@ const [theme, setTheme] = useState("winter");
           </div>
 
             <div className="flex items-center gap-1 -mt-2 ">
-              <div className="text-white">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-<path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#1F2937" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></div>
+             
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
 
               <h2 className="xl:text-sm text-[10px] ">Calamba City, Laguna</h2>
             </div>
@@ -75,8 +75,13 @@ const [theme, setTheme] = useState("winter");
             </a>
 
                 
-                 <div className="flex flex-row xl:py-2 py-1 px-2 gap-2 ring ring-blue-100 text-center justify-center items-center rounded-[5px]">
-                <img src={download} alt="" className="w-4"></img>
+                 <div className="flex flex-row cursor-pointer xl:py-2 py-1 px-2 gap-2 ring ring-blue-100 text-center justify-center items-center rounded-[5px]">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 15V3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
 
                 <div className="xl:text-sm text-[10px] xl:font-medium"onClick={() =>Logos() }>
                     Resume
