@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import profile from "../assets/logo/profile.png"
-import location from "../assets/icons/location.svg"
 import email from "../assets/icons/email.svg"
 import download from "../assets/icons/download.svg"
-// import toggle from "../assets/icons/toggle.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
 
