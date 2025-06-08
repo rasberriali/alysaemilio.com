@@ -38,19 +38,21 @@ function Logos() {
     ]
   
   return (
-    <div className="flex flex-row gap-4 p-2 mt-8  overflow-x-auto">
-      <Marquee speed={30} >
-      {logo.map((techStack,index)=>(
+   <div className="relative mt-8">
+  <div className="absolute left-0 top-0 h-full w-12 z-10 bg-gradient-to-r from-white dark:from-neutral-900 to-transparent " />
+  <div className="absolute right-0 top-0 h-full w-12 z-10 bg-gradient-to-l from-white dark:from-neutral-900 to-transparent " />
+
+  <div className="overflow-x-hidden">
+    <Marquee speed={30}>
+      {logo.map((techStack, index) => (
         <div className="mx-2" key={index}>
-            <img src={techStack}
-            alt={`tech-${index}`}
-            className="w-12"
-           />
-           </div>
+          <img src={techStack} alt={`tech-${index}`} className="w-12" />
+        </div>
       ))}
-        </Marquee>
-      
-    </div>
+    </Marquee>
+  </div>
+</div>
+
   )
 }
 

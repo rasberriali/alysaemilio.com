@@ -1,25 +1,17 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import profile from "../assets/logo/profile.png"
 import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
 
-function Main() {
-const [theme, setTheme] = useState(() => {
-  // Get stored theme or default to 'winter'
-  return localStorage.getItem("theme") || "winter";
-});
 
-// Sync theme with DaisyUI and localStorage
-useEffect(() => {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-}, [theme]);
+interface MainProps {
+  theme: string;
+  setTheme: (theme: string) => void;
+}
 
+function Main({ theme, setTheme }: MainProps) {
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
   return (
     <div className="max-w-screen-lg mx-auto px-4 py-8 transition-all duration-500 ease-in-out">
       <div className="flex flex-row  xl:gap-3 gap-4  items-center 0">
