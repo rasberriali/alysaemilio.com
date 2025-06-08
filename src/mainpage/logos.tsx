@@ -1,43 +1,54 @@
-import html from "../assets/logo/html.png"
-import java from "../assets/logo/Java.png"
-import c from "../assets/logo/C++.png"
-import javascript from "../assets/logo/JavaScript.png"
-import mysql from "../assets/logo/mysql.png"
-import css from "../assets/logo/css.png"
-import figma from "../assets/logo/Figma.png"
-import github from "../assets/logo/github2.png"
-import mongodb from "../assets/logo/mongodb.png"
-import python from "../assets/logo/Python.png"
-import react from "../assets/logo/React.png"
-import tailwind from "../assets/logo/tailwind.png"
-import typescript from "../assets/logo/typescript.png"
-import vite from "../assets/logo/vite.png"
-import vscode from "../assets/logo/vscode.png"
-import vercel from "../assets/logo/vercel.png"
+import Marquee from "react-fast-marquee";
+import html from "../assets/logo/html.svg"
+import java from "../assets/logo/Java.svg"
+import c from "../assets/logo/C++.svg"
+import javascript from "../assets/logo/JavaScriptt.svg"
+import mysql from "../assets/logo/mysql.svg"
+import css from "../assets/logo/css.svg"
+import python from "../assets/logo/Python.svg"
+import figma from "../assets/logo/figma.svg"
+import github from "../assets/logo/github.svg"
+import mongodb from "../assets/logo/mongodb.svg"
+import react from "../assets/logo/react.svg"
+import tailwind from "../assets/logo/tailwind.svg"
+import typescript from "../assets/logo/typescript.svg"
+import vite from "../assets/logo/vite.svg"
+import vscode from "../assets/logo/vscode.svg"
+import vercel from "../assets/logo/vercel.svg"
 
 function Logos() {
+
+  const logo = [
+      html,
+      css,
+      java,
+      mysql,
+      python,
+      c,
+      javascript,
+      vscode,
+      react,
+      typescript,
+      github,
+      tailwind,
+      figma,
+      mongodb,
+      vite,
+      vercel
+    ]
+  
   return (
-    <div className="flex flex-row  gap-4 p-2 mt-8  overflow-x-auto">
-        <img src={html} alt=""></img>
-        <img src={c} alt=""></img>
-        <img src={java} alt=""></img>
-          <img src={react} alt=""></img>
-        <img src={tailwind} alt=""></img>
-        <img src={javascript} alt=""></img>
-        <img src={mysql} alt=""></img>
-         <img src={vite} alt=""></img>
-          <img src={css} alt=""></img>
-        <img src={figma} alt=""></img>
-        <img src={mongodb} alt=""></img>
-        <img src={javascript} alt=""></img>
-         <img src={python} alt=""></img>
-        <img src={typescript} alt=""></img>
-         <img src={vercel} alt=""></img>
-        <img src={vscode} alt=""></img>
-        <img src={github} alt=""></img>
-        
-       
-        
+    <div className="flex flex-row gap-4 p-2 mt-8  overflow-x-auto">
+      <Marquee speed={30} >
+      {logo.map((techStack,index)=>(
+        <div className="mx-2" key={index}>
+            <img src={techStack}
+            alt={`tech-${index}`}
+            className="w-12"
+           />
+           </div>
+      ))}
+        </Marquee>
       
     </div>
   )
