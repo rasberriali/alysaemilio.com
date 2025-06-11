@@ -43,7 +43,7 @@ function Logos() {
   <div className="absolute right-0 top-0 h-full w-12 z-10 bg-gradient-to-l from-white dark:from-neutral-900 to-transparent " />
 
   <div className="overflow-x-hidden">
-    <Marquee speed={30}>
+    <Marquee speed={50} gradient={false} pauseOnHover={true}>
       {logo.map((techStack, index) => (
         <div className="mx-2" key={index}>
           <img src={techStack} alt={`tech-${index}`} className="w-12" />

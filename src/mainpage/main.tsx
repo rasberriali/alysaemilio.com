@@ -1,8 +1,9 @@
-// import { useState, useEffect } from "react";
+import { useState} from "react";
 import profile from "../assets/logo/profile.png"
 import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
+import resume from "../assets/files/resume.pdf"
 
 
 interface MainProps {
@@ -11,6 +12,9 @@ interface MainProps {
 }
 
 function Main({ theme, setTheme }: MainProps) {
+
+  const [isResumeOpenn, setIsResumeOpen] = useState(false);
+
 
   return (
     <div className="max-w-screen-lg mx-auto px-4 py-8 transition-all duration-500 ease-in-out">
@@ -63,7 +67,9 @@ function Main({ theme, setTheme }: MainProps) {
               href="mailto:alysaemilio@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row xl:py-2 py-1 gap-2 px-2 bg-blue-400 text-center justify-center items-center rounded-[5px] no-underline"
+              title="Send an email to alysaemilio@gmail.com"
+              aria-label="Send an email to alysaemilio@gmail.com"
+              className="flex flex-row xl:py-2 py-1 gap-2 px-2 bg-blue-400 text-center  justify-center items-center rounded-[5px] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all "
             >
               <img src={email} alt="" className="w-4" />
               <div className="xl:text-sm text-[10px] xl:font-medium text-white">
@@ -72,18 +78,56 @@ function Main({ theme, setTheme }: MainProps) {
             </a>
 
                 
-                 <div className="flex flex-row cursor-pointer xl:py-2 py-1 px-2 gap-2 border dark:border-blue-100/20 border-blue-100 text-center justify-center items-center rounded-[5px]">
+                <div
+                  className="flex flex-row cursor-pointer xl:py-2 py-1 px-2 gap-2 border
+                dark:border-blue-100/20 border-blue-100 text-center justify-center items-center rounded-[5px]"
+                  onClick={() => setIsResumeOpen(true)} 
+                >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M12 15V3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
 
-
-                <div className="xl:text-sm text-[10px] xl:font-medium"onClick={() =>Logos() }>
+                <div className="xl:text-sm text-[10px] xl:font-medium">
                     Resume
                 </div>
-            </div>
+              </div>
+
+                {isResumeOpenn && (
+                <div className="fixed inset-0 z-10 flex items-center justify-center bg-black/80">
+                  <div className="bg-neutral-200 dark:bg-neutral-900 rounded-lg p-6 w-[90%] md:w-[60%] lg:w-[80%] relative">
+                    <div className="flex flex-row items-center justify-between  p-2">
+                      <div className="flex gap-2 items-center">
+
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 15V3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                         <h2 className="text-lg font-medium ">Resume</h2>
+
+                      </div>
+                     
+                      <button
+                      onClick={() => setIsResumeOpen(false)}
+                      className="  text-sm cursor-pointer"
+                      aria-label="Close modal"
+                    >
+                     Close
+                    </button>
+  
+                    
+                    </div>
+                    
+                    <iframe
+                      src={resume}
+                      className="w-full h-[70vh] rounded"
+                      title="Resume PDF"
+                    ></iframe>
+                  </div>
+                </div>
+              )}
 
             </div>
           </div>
@@ -94,6 +138,15 @@ function Main({ theme, setTheme }: MainProps) {
 
       <Logos/>
       <Bentogrids/>
+
+      <div className="mt-50 mb-10">
+        <h1 className="border border-gray-400/40"></h1>
+        <div className="flex flex-row mt-8">
+          <h2 className="text-sm font-medium">&#169;2025 Alysa Emilio. All rights reserved.</h2>
+
+        </div>
+      </div>
+
     </div>
   );
 }

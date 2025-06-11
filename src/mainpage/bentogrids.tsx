@@ -161,14 +161,19 @@ const certs = [
       {/* Experience */}
       <Card className="md:col-span-2 row-span-5 dark:bg-neutral-800/40">
         <CardContent className="space-y-4">
-           <div className='flex gap-2'>
+           <div className='flex flex-row gap-2  justify-between items-center'>
+            <div className='flex gap-2 items-center'>
         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 3.5H4C2.89543 3.5 2 4.39543 2 5.5V15.5C2 16.6046 2.89543 17.5 4 17.5H20C21.1046 17.5 22 16.6046 22 15.5V5.5C22 4.39543 21.1046 3.5 20 3.5Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M8 21.5H16" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M12 17.5V21.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-
-        <h2 className="text-xl font-bold">Experience</h2>
+          <div className="text-xl font-bold">Experience</div>
+        </div>
+       
+           <div className='text-xs tracking-wide'>Internships</div>
+ 
+       
       </div>
           <ul className="relative border-l border-gray-300 pl-6 space-y-8">
   <li className="relative">
