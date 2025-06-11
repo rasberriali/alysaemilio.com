@@ -95,7 +95,7 @@ function Main({ theme, setTheme }: MainProps) {
               </div>
 
                 {isResumeOpenn && (
-                <div className="fixed inset-0 z-10 flex items-center justify-center bg-black/80">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
                   <div className="bg-neutral-200 dark:bg-neutral-900 rounded-lg p-6 w-[90%] md:w-[60%] lg:w-[80%] relative">
                     <div className="flex flex-row items-center justify-between  p-2">
                       <div className="flex gap-2 items-center">
