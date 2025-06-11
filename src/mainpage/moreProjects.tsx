@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '../components/ui/card';
 import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
-import thirdproject from "../assets/projectsImages/monitor.png"
+import thirdproject from "../assets/projectsImages/embedded.svg"
+import fourthproject from "../assets/projectsImages/monitor.png"
 
 function MoreProjects() {
     
@@ -16,33 +17,39 @@ const techColors: Record<string, string> = {
 
 const subprojects = [
   {
-    image: firstproject,
+    image: secondproject,
     title: "BAGA.NET",
-    description:  "I design and develop the frontend for BAGA.NET, an ongoing thesis project.",
+    description:  "I designed and developed here our system for thesis, a lung classification disease through federated machine leanring.",
     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
   },
    {
-    image: secondproject,
+    image: thirdproject,
+    title: "Embedded Silicon",
+    description:  "Lead the complete revamp of Embedded Silicons website, integrating CMS on job listing and success stories",
+     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
+  },
+   {
+    image: firstproject,
     title: "Airizz",
     description:  "I designed here the UI/UX for air quality monitoring and contributed to the backend using DynamoDB, APIs, and Lambda.",
     tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
   },
-   {
-    image: thirdproject,
-    title: "dotGenerate",
+  {
+    image: fourthproject,
+    title: "Airizz",
     description:  "This is a simple personal project, created to enhance my MERN stack skills and perform CRUD functionalities. It generates project ideas to inspire developers.",
-     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
+    tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
   },
 ]
     return(
          <div className="max-w-screen-lg mx-auto p-4 mt-4 space-y-10">
-            <Link to="/" className='flex flex-row gap-2'>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Link to="/" className='flex flex-row gap-2 items-center group transition-all duration-300 ease-in-out'>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className='transform transition-transform duration-300 ease-in-out group-hover:-translate-x-1.5 group-hover:opacity-80'>
                 <path d="M19 12H5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
 
-                <div>
+                <div className='text-sm underline-offset-2 transform transition-transform duration-300 ease-in-out group-hover:-translate-x-1.5 group-hover:opacity-80">'>
                     Back to Home
                 </div>
                 

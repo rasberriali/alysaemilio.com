@@ -8,9 +8,10 @@ import { Input } from '../components/ui/input'
 import { Label } from "../components/ui/label"
 import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
-import thirdproject from "../assets/projectsImages/monitor.png"
+import thirdproject from "../assets/projectsImages/embedded.svg"
 import linkedin from "../assets/logo/linkedin.png"
 import github from "../assets/logo/github2.png"
+import githubb from "../assets/logo/githubT.svg"
 import instagram from "../assets/logo/instagram.png"
 import js1 from "../assets/files/js1.jpg";
 import js2 from "../assets/files/js2.png";
@@ -73,22 +74,29 @@ const techColors: Record<string, string> = {
 
 const projects = [
   {
-    image: firstproject,
-    title: "BAGA.NET",
-    description:  "I design and develop here our system for thesis.",
-    tech:['#MongoDB','Express.Js','#React','#Node.Js'],
-  },
-   {
     image: secondproject,
-    title: "Airizz",
-    description:  "I designed here the UI/UX for air quality monitoring and contributed to the backend using DynamoDB, APIs, and Lambda.",
-    tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
+    title: "BAGA.NET",
+    description:  "I designed and developed here our system for thesis, a lung classification disease through federated machine leanring.",
+    tech:['#MongoDB','Express.Js','#React','#Node.Js'],
+    linkvercel:"https://baga-net.vercel.app",
+    link:"https://github.com/rasberriali/BAGA.Net"
   },
    {
     image: thirdproject,
-    title: "dotGenerate",
-    description:  "This is a simple personal project, created to enhance my MERN stack skills and perform CRUD functionalities. It generates project ideas to inspire developers.",
+    title: "Embedded Silicon",
+    description:  "Lead the complete revamp of Embedded Silicons website, integrating CMS on job listing and success stories",
      tech:['#MongoDB','Express.Js','#React','#Node.Js'],
+     link:"https://github.com/rasberriali/embedded-silicon",
+     linkvercel:"https://embedded-silicon.vercel.app"
+
+  },
+   {
+    image: firstproject,
+    title: "Airizz",
+    description:  "I designed here the UI/UX for air quality monitoring and contributed to the backend using DynamoDB, APIs, and Lambda.",
+    tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
+      link:"https://github.com/rasberriali/AirQualityMonitoring",
+     linkvercel:"https://air-quality-monitoring-mocha.vercel.app"
   },
 ]
 
@@ -237,24 +245,38 @@ const certs = [
 
               <h2 className="text-xl font-bold">Projects</h2>
             </div>
-            <Link to="/projects" className='flex flex-row justify-end items-center gap-1 cursor-pointer'>
-                 <div className='text-xs'>View All</div>
-                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Link to="/projects" className='flex flex-row justify-end items-center gap-1 cursor-pointer group'>
+                 <div className='text-xs underline-offset-2 transform transition-transform duration-300 group-hover:translate-x-2'>View All</div>
+                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className='transform transition-transform duration-300 group-hover:translate-x-2'>
                 <path d="M4.66663 11.3334L11.3333 4.66669" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M4.66663 4.66669H11.3333V11.3334" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
 
                 </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {projects.map((projects,index) => (
-              <Card key={index}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
+              {projects.map((projects,index) => (
+            <a
+            key={index}
+            href={projects.linkvercel}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block">
+          
+              <Card key={index} className='transform transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 cursor-pointer'>
+                
                 <CardContent className='flex flex-col space-y-2'>
                   <img
                     src={projects.image}
                     alt="Project Thumbnail"
-                    className="rounded mb-2"
+                    className="rounded mb-2 relative"
                   />
+                  <a key={index} href={projects.link}  target="_blank"
+            rel="noopener noreferrer" className=' absolute p-2 m-2 bg-blue-200 rounded-full cursor-pointer '>
+                 
+                  <img src={githubb} alt="" className='w-6'></img>
+                </a>
+                
                   <h3 className="font-semibold">{projects.title}</h3>
                   <p className="text-sm text-gray-500">
                    {projects.description}
@@ -279,6 +301,7 @@ const certs = [
                   </div>
                 </CardContent>
            </Card>
+           </a>
 
       ))}
      
@@ -286,6 +309,7 @@ const certs = [
           </div>
         </CardContent>
       </Card>
+  
 
       {/* Connect */}
       <Card className="md:col-span-4 dark:bg-neutral-800/40">
@@ -370,7 +394,7 @@ const certs = [
       </div>
           <div className="space-y-4 mt-4">
             {certs.map((certs,index) => (
-            <div className='flex flex-col justify-between min-h-26 bg-[#F3F3F3] dark:bg-neutral-100/85 text-black  p-4 rounded-[10px]' key={index} onClick={() => window.open(certs.certsImages, "_blank")}>
+            <div className='flex flex-col justify-between min-h-26  bg-[#F3F3F3] dark:bg-neutral-100/85 text-black  p-4 rounded-[10px] transform transition-transform duration-300 ease-in-out hover:-translate-y-1.5 cursor-pointer' key={index} onClick={() => window.open(certs.certsImages, "_blank")}>
               <div className=''>
                 <h1 className='font-bold tracking-wide '>{certs.title}</h1>
                 <h2 className='text-sm font-light'> {certs.subtitle}</h2>
