@@ -1,5 +1,5 @@
 import { useState} from "react";
-import profile from "../assets/logo/profile.png"
+import profile from "../assets/files/profile.png"
 import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
@@ -23,7 +23,7 @@ function Main({ theme, setTheme }: MainProps) {
           <img
             src={profile}
             alt="Profile"
-            className=" h-auto object-contain"
+            className=" h-auto object-contain rounded-[10px]"
           />
         </div>
 
@@ -69,7 +69,7 @@ function Main({ theme, setTheme }: MainProps) {
               rel="noopener noreferrer"
               title="Send an email to alysaemilio@gmail.com"
               aria-label="Send an email to alysaemilio@gmail.com"
-              className="flex flex-row xl:py-2 py-1 gap-2 px-2 bg-blue-400 text-center  justify-center items-center rounded-[5px] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all "
+              className="flex flex-row xl:py-2 py-1 gap-2 px-2 bg-sky-500 text-center  justify-center items-center rounded-[5px] hover:bg-sky-700 transform transition-transform duration-300 ease-in-out hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-300  "
             >
               <img src={email} alt="" className="w-4" />
               <div className="xl:text-sm text-[10px] xl:font-medium text-white">
@@ -79,7 +79,7 @@ function Main({ theme, setTheme }: MainProps) {
 
                 
                 <div
-                  className="flex flex-row cursor-pointer xl:py-2 py-1 px-2 gap-2 border
+                  className="flex flex-row cursor-pointer xl:py-2 py-1 px-2 gap-2 border transform transition-transform duration-300 ease-in-out hover:-translate-y-0.5
                 dark:border-blue-100/20 border-blue-100 text-center justify-center items-center rounded-[5px]"
                   onClick={() => setIsResumeOpen(true)} 
                 >
@@ -89,7 +89,7 @@ function Main({ theme, setTheme }: MainProps) {
                 <path d="M12 15V3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
 
-                <div className="xl:text-sm text-[10px] xl:font-medium">
+                <div className="xl:text-sm text-[10px] xl:font-medium ">
                     Resume
                 </div>
               </div>

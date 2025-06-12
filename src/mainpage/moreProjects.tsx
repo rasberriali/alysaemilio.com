@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
+import { motion } from "motion/react"
 import { Card, CardContent } from '../components/ui/card';
 import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
 import thirdproject from "../assets/projectsImages/embedded.svg"
 import fourthproject from "../assets/projectsImages/monitor.png"
+import githubb from "../assets/logo/githubT.svg"
 
 function MoreProjects() {
     
@@ -21,24 +23,32 @@ const subprojects = [
     title: "BAGA.NET",
     description:  "I designed and developed here our system for thesis, a lung classification disease through federated machine leanring.",
     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
+      linkvercel:"https://baga-net.vercel.app",
+    link:"https://github.com/rasberriali/BAGA.Net"
   },
    {
     image: thirdproject,
     title: "Embedded Silicon",
     description:  "Lead the complete revamp of Embedded Silicons website, integrating CMS on job listing and success stories",
      tech:['#MongoDB','Express.Js','#React','#Node.Js'],
+       link:"https://github.com/rasberriali/embedded-silicon",
+     linkvercel:"https://embedded-silicon.vercel.app"
   },
    {
     image: firstproject,
     title: "Airizz",
     description:  "I designed here the UI/UX for air quality monitoring and contributed to the backend using DynamoDB, APIs, and Lambda.",
     tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
+       link:"https://github.com/rasberriali/AirQualityMonitoring",
+     linkvercel:"https://air-quality-monitoring-mocha.vercel.app"
   },
   {
     image: fourthproject,
-    title: "Airizz",
+    title: "DotGenerate",
     description:  "This is a simple personal project, created to enhance my MERN stack skills and perform CRUD functionalities. It generates project ideas to inspire developers.",
     tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
+       link:"https://github.com/rasberriali/dotGenerate",
+     linkvercel:"https://dot-generate.vercel.app"
   },
 ]
     return(
@@ -76,6 +86,17 @@ const subprojects = [
             </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {subprojects.map((projects,index) => (
+                <motion.a
+              key={index}
+              href={projects.linkvercel}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="block"
+            >
               <Card key={index}>
                 <CardContent className='flex flex-col space-y-2'>
                   <img
@@ -83,6 +104,12 @@ const subprojects = [
                     alt="Project Thumbnail"
                     className="rounded mb-2"
                   />
+
+                    <a key={index} href={projects.link}  target="_blank"
+            rel="noopener noreferrer" className=' absolute p-2 m-2 bg-blue-200 rounded-full cursor-pointer '>
+                 
+                  <img src={githubb} alt="" className='w-6'></img>
+                </a>
                   <h3 className="font-semibold">{projects.title}</h3>
                   <p className="text-sm text-gray-500">
                    {projects.description}
@@ -107,6 +134,7 @@ const subprojects = [
                   </div>
                 </CardContent>
            </Card>
+           </motion.a>
 
       ))}
      

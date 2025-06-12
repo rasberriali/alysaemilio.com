@@ -1,19 +1,17 @@
 import { useEffect , useState} from 'react';
+import { motion } from "motion/react"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from "./mainpage/main"
 import MoreProjects from "./mainpage/moreProjects"
 import ScrollToTop from './components/ux/scrollTop';
-// import Aurora from './assets/bg/aurora';
 import SplashCursor from './assets/bg/aurora';
 
 function App() {
 
   const [theme, setTheme] = useState(() => {
-    // Get stored theme or default to 'winter'
     return localStorage.getItem("theme") || "winter";
   });
   
-  // Sync theme with DaisyUI and localStorage
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
@@ -25,7 +23,12 @@ function App() {
     }, [theme]);
 
   return (
-    <div className='inter'>
+    <motion.div 
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.15 }}
+    viewport={{ once: true, amount: 0.3 }}
+    className="inter">
       <Router>
          <ScrollToTop/>
         
@@ -35,7 +38,7 @@ function App() {
           <Route path="/projects" element={<MoreProjects/>}/>
         </Routes>
       </Router>
-    </div>
+    </motion.div>
   )
 }
 
