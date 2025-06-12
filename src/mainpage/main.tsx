@@ -19,7 +19,7 @@ function Main({ theme, setTheme }: MainProps) {
   return (
     <div className="max-w-screen-lg mx-auto px-4 py-8 transition-all duration-500 ease-in-out">
       <div className="flex flex-row  xl:gap-3 gap-4  items-center 0">
-        <div className="md:w-1/5 w-2/5">
+        <div className="md:w-1/5 w-1/3">
           <img
             src={profile}
             alt="Profile"
