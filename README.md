@@ -1,6 +1,6 @@
 # 🧑‍💻 Alysa Emilio – Portfolio Website
 
-This is my personal developer portfolio built to showcase my projects, skills, resume, and professional background. Designed with a clean UI using React and TailwindCSS, and deployed using Vercel.
+This is my personal developer portfolio built to showcase my projects, skills, resume, and professional background. Designed with a clean UI using React and TailwindCSS, and deployed using Vercel and in AWS S3 bucket.
 
 ## 🔧 Tech Stack
 
