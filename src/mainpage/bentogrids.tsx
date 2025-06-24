@@ -168,7 +168,7 @@ const certs = [
   <motion.div
    initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.15 }}
+    transition={{ duration: 0.5, delay: 0.60 }}
     viewport={{ once: true, amount: 0.3 }}>
     <CardContent className="">
       <p className="italic text-base text-sky-500 leading-6 ">
