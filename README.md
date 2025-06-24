@@ -20,7 +20,8 @@ This is my personal developer portfolio built to showcase my projects, skills, r
 
 ## 🚀 Live Demo
 
-🔗 [Visit My Portfolio](https://alysaemilio-com.vercel.app)
+🔗VERCEL [Visit My Portfolio](https://alysaemilio-com.vercel.app)
+🔗AWS [Visit My Portfolio](http://alysaemilio.s3-website-ap-southeast-1.amazonaws.com)
 
 ## 🛠️ Run Locally
 
