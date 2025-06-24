@@ -4,7 +4,7 @@ import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
 import resume from "../assets/files/Resume.jpg"
-import Resume from "../assets/files/Resume.pdf"
+import resumepdf from "../assets/files/resumepdf.pdf"
 
 
 interface MainProps {
@@ -135,7 +135,7 @@ function Main({ theme, setTheme }: MainProps) {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href={Resume}
+            href={resumepdf}
             download="Alysa_Resume.pdf"
             className="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
             aria-label="Download Resume PDF"
