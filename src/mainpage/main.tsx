@@ -3,7 +3,7 @@ import profile from "../assets/files/profile.jpg"
 import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
-import resume from "../assets/files/resume.jpg"
+import resume from "../assets/files/Resume.jpg"
 import Resume from "../assets/files/Resume.pdf"
 
 
