@@ -22,14 +22,6 @@ This is my personal developer portfolio built to showcase my projects, skills, r
 
 🔗 [Visit My Portfolio](https://alysaemilio-com.vercel.app)
 
-## 📸 Screenshots
-
-| Homepage | Projects | Contact |
-|----------|----------|---------|
-| ![](./screenshots/home.png) | ![](./screenshots/projects.png) | ![](./screenshots/contact.png) |
-
-> Upload your screenshots in a `/screenshots/` folder to show visuals in the table above.
-
 ## 🛠️ Run Locally
 
 ```bash
