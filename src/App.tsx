@@ -2,6 +2,7 @@ import { useEffect , useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from "./mainpage/main"
 import MoreProjects from "./mainpage/moreProjects"
+import MoreCerts from './mainpage/moreCerts';
 import ScrollToTop from './components/ux/scrollTop';
 import SplashCursor from './assets/bg/aurora';
 
@@ -30,6 +31,7 @@ function App() {
         <Routes>
              <Route path="/" element={<Main theme={theme} setTheme={setTheme} />} />
           <Route path="/projects" element={<MoreProjects/>}/>
+             <Route path="/certs" element={<MoreCerts/>}/>
         </Routes>
       </Router>
     </div>

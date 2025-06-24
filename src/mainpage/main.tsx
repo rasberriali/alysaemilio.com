@@ -1,9 +1,10 @@
 import { useState} from "react";
-import profile from "../assets/files/profile.png"
+import profile from "../assets/files/profile.jpg"
 import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
-import resume from "../assets/files/resume.pdf"
+import resume from "../assets/files/resume.jpg"
+import Resume from "../assets/files/Resume.pdf"
 
 
 interface MainProps {
@@ -95,39 +96,91 @@ function Main({ theme, setTheme }: MainProps) {
               </div>
 
                 {isResumeOpenn && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
-                  <div className="bg-neutral-200 dark:bg-neutral-900 rounded-lg p-6 w-[90%] md:w-[60%] lg:w-[80%] relative">
-                    <div className="flex flex-row items-center justify-between  p-2">
-                      <div className="flex gap-2 items-center">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+    <div className="bg-neutral-200 dark:bg-neutral-900 rounded-lg p-6 max-h-[90vh] max-w-[90vw] w-full relative flex flex-col">
+      {/* Modal Header */}
+      <div className="flex items-center justify-between p-2 sticky top-0 bg-neutral-200 dark:bg-neutral-900 z-50 border-b border-gray-300 dark:border-gray-700">
+        <div className="flex gap-2 items-center">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-current"
+          >
+            <path
+              d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15"
+              stroke="currentColor"
+              strokeWidth="1.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M7 10L12 15L17 10"
+              stroke="currentColor"
+              strokeWidth="1.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M12 15V3"
+              stroke="currentColor"
+              strokeWidth="1.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <h2 className="text-lg font-medium select-none">Resume</h2>
+        </div>
+        <div className="flex items-center gap-4">
+          <a
+            href={Resume}
+            download="Alysa_Resume.pdf"
+            className="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+            aria-label="Download Resume PDF"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"
+              />
+            </svg>
+            Download
+          </a>
+          <button
+            onClick={() => setIsResumeOpen(false)}
+            className="text-sm cursor-pointer px-3 py-1 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition"
+            aria-label="Close modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
 
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 15V3" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                         <h2 className="text-lg font-medium ">Resume</h2>
+      <div className="flex-grow overflow-auto mt-4 px-4">
+        <div className="relative w-full xl:min-h-[80vh] min-h-[20vh] max-w-[900px] mx-auto rounded-xl ring-1 ring-gray-300 dark:ring-gray-600 shadow-md overflow-auto scroll-smooth">
+          <img
+            src={resume}
+            alt="Resume Preview"
+            className="w-[100%] h-auto object-contain select-none "
+            title="Resume Preview"
+            style={{ userSelect: 'none' }}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
-                      </div>
-                     
-                      <button
-                      onClick={() => setIsResumeOpen(false)}
-                      className="  text-sm cursor-pointer"
-                      aria-label="Close modal"
-                    >
-                     Close
-                    </button>
-  
-                    
-                    </div>
-                    
-                    <iframe
-                      src={resume}
-                      className="w-full h-[70vh] rounded"
-                      title="Resume PDF"
-                    ></iframe>
-                  </div>
-                </div>
-              )}
 
             </div>
           </div>

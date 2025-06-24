@@ -87,54 +87,49 @@ const subprojects = [
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {subprojects.map((projects,index) => (
                 <motion.a
-              key={index}
-              href={projects.linkvercel}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true, amount: 0.3 }}
-              className="block"
-            >
-              <Card key={index}>
-                <CardContent className='flex flex-col space-y-2'>
-                  <img
-                    src={projects.image}
-                    alt="Project Thumbnail"
-                    className="rounded mb-2"
-                  />
+    key={index}
+    href={projects.linkvercel}
+    target="_blank"
+    rel="noopener noreferrer"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.15 }}
+    viewport={{ once: true, amount: 0.3 }}
+    className="block"
+  >
+    <Card className="transform transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 cursor-pointer">
+      <CardContent className="flex flex-col space-y-2">
+        <img src={projects.image} alt="Project Thumbnail" className="rounded mb-2 relative" />
+        <a
+          href={projects.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute p-2 m-2 bg-blue-200 rounded-full cursor-pointer hover:animate-spin hover:bg-sky-300"
+        >
+          <img src={githubb} alt="" className="w-6" />
+        </a>
+        <h3 className="font-semibold">{projects.title}</h3>
+        <p className="text-sm text-gray-500">{projects.description}</p>
+        <div className="tech-stack">
+          {projects.tech.map((techItem, i) => (
+      <span
+          key={i}
+          className="inline-flex items-center justify-center px-3 py-1 rounded-md mr-2 mt-2 text-xs font-medium ring-1 bg-neutral-100 dark:bg-neutral-800 ring-gray-300/60 dark:ring-gray-300/10"
+          style={{
+            color: techColors[techItem] || "#444",
+           
+          }}
+        >
+          {techItem}
+        </span>
 
-                    <a key={index} href={projects.link}  target="_blank"
-            rel="noopener noreferrer" className=' absolute p-2 m-2 bg-blue-200 rounded-full cursor-pointer '>
-                 
-                  <img src={githubb} alt="" className='w-6'></img>
-                </a>
-                  <h3 className="font-semibold">{projects.title}</h3>
-                  <p className="text-sm text-gray-500">
-                   {projects.description}
-                  </p>
-                 <div className="tech-stack">
-                    {projects.tech.map((techItem, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          backgroundColor: techColors[techItem] || '#888',
-                          color: 'white',
-                          padding: '4px',
-                          borderRadius: '6px',
-                          marginRight: '6px',
-                          marginTop:'4px',
-                          display: 'inline-block',
-                        }}
-                      >
-                       <h1 className='xl:text-sm text-xs font-semibold '>{techItem}</h1> 
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-           </Card>
-           </motion.a>
+
+
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.a>
 
       ))}
      
