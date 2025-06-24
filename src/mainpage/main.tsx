@@ -60,7 +60,7 @@ function Main({ theme, setTheme }: MainProps) {
               <h2 className="xl:text-sm text-[10px] ">Calamba City, Laguna</h2>
             </div>
             <h3 className="xl:text-base text-[14px] font-normal">
-              Bs Computer Engineer and an aspiring Fullstack Developer
+              Bs Computer Engineer and an entry-level Software Engineer
             </h3>
 
             <div className="grid grid-cols-2 grid-rows-1 gap-3 md:w-2/5 mt-2 ">
