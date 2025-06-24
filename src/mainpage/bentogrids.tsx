@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { color, motion } from "motion/react"
+import { motion } from "motion/react"
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { Card, CardContent } from '../components/ui/card';
