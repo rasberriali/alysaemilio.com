@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { motion } from "motion/react"
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
+import GitHubCalendar from 'react-github-calendar'
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input'
 import { Label } from "../components/ui/label"
-import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
 import thirdproject from "../assets/projectsImages/embedded.svg"
+import fourthproject from "../assets/files/projprofile.jpg"
 import linkedin from "../assets/logo/linkedin.png"
 import github from "../assets/logo/github2.png"
 import githubb from "../assets/logo/githubT.svg"
@@ -18,6 +19,16 @@ import devops from "../assets/files/devops.png"
 import mern from "../assets/files/Mern.jpg";
 
 export default function BentoPortfolio() {
+
+
+  const customTheme = {
+  level0: "#727374",
+  level1: "#c6f6d5",
+  level2: "#68d391",
+  level3: "#48bb78",
+  level4: "#2f855a"  
+};
+
 
 const [isSubmitting, setIsSubmitting] = useState(false); 
 const [stateMessage, setStateMessage] = useState<string | null>(null);
@@ -58,6 +69,9 @@ const techColors: Record<string, string> = {
   'Express.Js': '#29CD83',
   '#React': '#D53B6A',
   '#Node.Js': '#7031ef',
+   '#TypeScript': '#46AEF0',
+  '#TailwindCss + Vite': '#4053D6',
+  '#ShadCN + DaisyUI': '#29CD83',
 };
 
 
@@ -71,6 +85,15 @@ const projects = [
     link:"https://github.com/rasberriali/BAGA.Net"
   },
    {
+    image: fourthproject,
+    title: "Portfolio",
+    description:  "My current portfolio website, deployed using an AWS S3 bucket for static hosting and set up with AWS CodePipeline.",
+    tech:['#TypeScript','#TailwindCss + Vite','#ShadCN + DaisyUI','#React'],
+    linkvercel:"http://alysaemilio.s3-website-ap-southeast-1.amazonaws.com",
+    link:"https://github.com/rasberriali/alysaemilio.com?tab=readme-ov-file"
+  },
+
+   {
     image: thirdproject,
     title: "Embedded Silicon",
     description:  "Lead the complete revamp of Embedded Silicons website, integrating CMS on job listing and success stories",
@@ -79,19 +102,11 @@ const projects = [
      linkvercel:"https://embedded-silicon.vercel.app"
 
   },
-   {
-    image: firstproject,
-    title: "Airizz",
-    description:  "I designed here the UI/UX for air quality monitoring and contributed to the backend using DynamoDB, APIs, and Lambda.",
-    tech:['#DynamoDB','Express.Js','#React','#Node.Js'],
-      link:"https://github.com/rasberriali/AirQualityMonitoring",
-     linkvercel:"https://air-quality-monitoring-mocha.vercel.app"
-  },
 ]
 
 const certs = [
    {
-    title: "AWS Cloud Practioner Essentials",
+    title: "AWS Cloud Practitioner Essentials",
     subtitle: "Completion Certificate",
     certsImages: cloud,
   },
@@ -107,8 +122,8 @@ const certs = [
   },
 ]
   return (
-    <div className="container grid grid-cols-1 md:grid-cols-6 grid-rows-5 gap-4 mt-10 mb-20">
-<Card className="md:col-span-4 row-span-4 flex flex-col justify-between dark:bg-neutral-800/40">
+    <div className="container h-full grid grid-cols-1 md:grid-cols-6 grid-rows-1 gap-4 mt-10 mb-20">
+<Card className="md:col-span-4 row-span-1 flex flex-col justify-between dark:bg-neutral-800/40">
   
 
     <CardContent className="space-y-4 ">
@@ -133,9 +148,10 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.30 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6 '>
-       I’m a Computer Engineer passionate about software development, especially in web technologies. 
-       I primarily work with the MERN stack (MongoDB, Express.js, React.js, Node.js) to build full-stack
-        applications and am currently learning Laravel 11 to expand my backend skills with PHP.
+      I’m a Computer Engineer passionate about software development, especially in web 
+      technologies. I primarily work with the MERN stack (MongoDB, Express.js, React.js, Node.js) 
+      to build full-stack applications and I’m currently learning Laravel 11 to further strengthen
+       my backend skills with PHP.
       </motion.p>
       <motion.p
        initial={{ opacity: 0, y: 50 }}
@@ -143,9 +159,11 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.50 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6'>
-        Throughout college, I gravitated more toward software despite my program covering both
-         hardware and software. I took the initiative to deepen my knowledge by watching tutorials,
-          joining free online courses, and participating in mentorship programs centered around modern web development.
+       Throughout college, I naturally gravitated toward software,
+        even though my program covered both hardware and software.
+         I took the initiative to deepen my knowledge by watching tutorials, 
+         joining free online courses, and participating in mentorship programs
+          focused on modern web development.
       </motion.p>
       <motion.p
        initial={{ opacity: 0, y: 50 }}
@@ -153,9 +171,8 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.70 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6'>
-        Beyond academics, I’ve worked as a freelancer on various projects, gaining practical 
-        experience with technologies like Java, Flask, Django, and PHP. These experiences 
-        allowed me to handle different aspects of development, from coding to documentation. I continue to push myself to stay updated with industry trends and am committed to consistently delivering my best in every project.
+        I’m also eager to expand my skills in cloud technologies, 
+        as I believe they play a vital role in building scalable, efficient software solutions.
 
 
       </motion.p>
@@ -163,18 +180,24 @@ const certs = [
     </CardContent>
 </Card>
 
-  {/* Mantra */}
- <Card className="row-start-5 md:col-span-4 dark:bg-neutral-800/40">
+ <Card className="row-start-2 md:col-span-4 dark:bg-neutral-800/40">
   <motion.div
    initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay: 0.60 }}
     viewport={{ once: true, amount: 0.3 }}>
     <CardContent className="">
-      <p className="italic text-base text-sky-500 leading-6 ">
-        "Empowered by faith, driven by discipline, refined by every line of code."
-        <br /><span className='flex justify-end text-xs text-gray-500'>- Daily motivation</span>
-      </p>
+  
+  <GitHubCalendar
+  username="rasberriali" 
+  colorScheme='light'
+  data-theme={customTheme}
+  
+/>
+
+
+
+
     </CardContent>
   </motion.div>
   </Card>
@@ -182,7 +205,7 @@ const certs = [
 
 
       {/* Experience */}
-      <Card className="md:col-span-2 row-span-5 dark:bg-neutral-800/40">
+      <Card className="md:col-span-2 row-span-2 dark:bg-neutral-800/40">
         <CardContent className="space-y-4">
           <div>
            <motion.div 
@@ -191,16 +214,22 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.15 }}
     viewport={{ once: true, amount: 0.3 }}
            className='flex flex-row gap-2  justify-between items-center'>
-            <div className='flex gap-2 items-center'>
-        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className='flex flex-col gap-2 items-start mb-2'>
+              <div className='flex flex-row gap-2 justify-between items-center'>
+                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 3.5H4C2.89543 3.5 2 4.39543 2 5.5V15.5C2 16.6046 2.89543 17.5 4 17.5H20C21.1046 17.5 22 16.6046 22 15.5V5.5C22 4.39543 21.1046 3.5 20 3.5Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M8 21.5H16" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M12 17.5V21.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-          <div className="text-xl font-bold">Experience</div>
-        </div>
+   
+       <div className="text-xl font-bold">Experience</div>
+              </div>
        
-           <div className='text-xs tracking-wide'>Internships</div>
+        <div className="text-sm font-light">Internships</div>
+        
+        </div>
+        
+      
  
        
       </motion.div>
@@ -211,6 +240,7 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.30 }}
     viewport={{ once: true, amount: 0.3 }}
   className="relative">
+    
 
   <span className='relative flex size-3 -left-[30px] top-1'>
      <span className=" absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
@@ -509,7 +539,7 @@ initial={{ opacity: 0, y: 50 }}
                 <h1 className='font-bold tracking-wide leading-5 mb-2  '>{certs.title}</h1>
                 <h2 className='text-sm font-light'> {certs.subtitle}</h2>
               </div>
-              <div className='flex flex-row justify-end items-center gap-1 cursor-pointe'>
+              <div className='flex flex-row justify-end items-center gap-1 cursor-pointer'>
                  <div className='text-xs'>View</div>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4.66663 11.3334L11.3333 4.66669" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>

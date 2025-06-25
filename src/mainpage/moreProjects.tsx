@@ -5,6 +5,7 @@ import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
 import thirdproject from "../assets/projectsImages/embedded.svg"
 import fourthproject from "../assets/projectsImages/monitor.png"
+import fifthproject from "../assets/files/projprofile.jpg"
 import githubb from "../assets/logo/githubT.svg"
 
 function MoreProjects() {
@@ -25,6 +26,14 @@ const subprojects = [
     tech:['#MongoDB','Express.Js','#React','#Node.Js'],
       linkvercel:"https://baga-net.vercel.app",
     link:"https://github.com/rasberriali/BAGA.Net"
+  },
+  {
+    image: fifthproject,
+    title: "Portfolio",
+    description:  "My current portfolio website, deployed using an AWS S3 bucket for static hosting and set up with AWS CodePipeline.",
+    tech:['#TypeScript','#TailwindCss + Vite','#ShadCN + DaisyUI','#React'],
+    linkvercel:"http://alysaemilio.s3-website-ap-southeast-1.amazonaws.com",
+    link:"https://github.com/rasberriali/alysaemilio.com?tab=readme-ov-file"
   },
    {
     image: thirdproject,

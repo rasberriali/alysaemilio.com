@@ -11,7 +11,7 @@ function MoreCerts() {
     
 const certs = [
   {
-    title: "AWS Cloud Practioner Essentials",
+    title: "AWS Cloud Practitioner Essentials",
     subtitle: "Completion Certificate",
     certsImages: cloud,
   },
