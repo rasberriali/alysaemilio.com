@@ -5,7 +5,7 @@ import firstproject from "../assets/projectsImages/mcbook.png"
 import secondproject from "../assets/projectsImages/mcbook2.png"
 import thirdproject from "../assets/projectsImages/embedded.svg"
 import fourthproject from "../assets/projectsImages/monitor.png"
-import fifthproject from "../assets/files/projprofile.jpg"
+import fifthproject from "../assets/files/profile-thumbnail.jpg"
 import githubb from "../assets/logo/githubT.svg"
 
 function MoreProjects() {

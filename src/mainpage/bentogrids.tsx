@@ -9,7 +9,7 @@ import { Input } from '../components/ui/input'
 import { Label } from "../components/ui/label"
 import secondproject from "../assets/projectsImages/mcbook2.png"
 import thirdproject from "../assets/projectsImages/embedded.svg"
-import fourthproject from "../assets/files/projprofile.jpg"
+import fourthproject from "../assets/files/profile-thumbnail.jpg"
 import linkedin from "../assets/logo/linkedin.png"
 import github from "../assets/logo/github2.png"
 import githubb from "../assets/logo/githubT.svg"
