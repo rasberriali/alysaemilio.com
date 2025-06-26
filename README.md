@@ -8,8 +8,8 @@ This is my personal developer portfolio built to showcase my projects, skills, r
 - **Styling**: TailwindCSS, DaisyUI
 - **Animation**: Framer Motion
 - **Deployment**:
-  Vercel – For frontend deployment with GitHub integration.
-  Amazon S3 (AWS) – Static site hosted using S3 with CI/CD via CodePipeline and CodeDeploy.
+  - Vercel – For frontend deployment with GitHub integration.
+  - Amazon S3 (AWS) – Static site hosted using S3 with CI/CD via CodePipeline and CodeDeploy.
 
 
 ## 📂 Features
