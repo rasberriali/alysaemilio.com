@@ -3,8 +3,8 @@ import profile from "../assets/files/profile.jpg"
 import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
-import resume from "../assets/files/Alysa Emilio - Entry-level.png"
-import resumepdf from "../assets/files/Entry-level - Software Engineer.pdf"
+import resume from "../assets/files/Resume.png"
+import resumepdf from "../assets/files/AlysaEmilio - Software Engineer.pdf"
 
 
 interface MainProps {

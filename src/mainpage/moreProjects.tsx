@@ -16,6 +16,9 @@ const techColors: Record<string, string> = {
   'Express.Js': '#29CD83',
   '#React': '#D53B6A',
   '#Node.Js': '#7031ef',
+   '#TypeScript': '#46AEF0',
+  '#TailwindCss + Vite': '#4053D6',
+  '#ShadCN + DaisyUI': '#29CD83',
 };
 
 const subprojects = [
