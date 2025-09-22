@@ -148,10 +148,12 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.30 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6 '>
-      I’m a Computer Engineer passionate about software development, especially in web 
-      technologies. I primarily work with the MERN stack (MongoDB, Express.js, React.js, Node.js) 
-      to build full-stack applications and I’m currently learning Laravel 11 to further strengthen
-       my backend skills with PHP.
+      I’m a Computer Engineer passionate about software development, with a strong focus 
+      on building scalable and efficient web applications. Currently, I work as a Software
+       Developer at a US-based company, where I lead frontend engineering using React, 
+       TypeScript, and React Query. I collaborate closely with the CEO and leadership 
+       team to translate business vision into workflows, integrate APIs, and deliver 
+       maintainable, production-ready solutions.
       </motion.p>
       <motion.p
        initial={{ opacity: 0, y: 50 }}
@@ -159,11 +161,10 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.50 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6'>
-       Throughout college, I naturally gravitated toward software,
-        even though my program covered both hardware and software.
-         I took the initiative to deepen my knowledge by watching tutorials, 
-         joining free online courses, and participating in mentorship programs
-          focused on modern web development.
+       I primarily work with the MERN stack (MongoDB, Express.js, React.js, Node.js) 
+       for full-stack development, while also sharpening my backend skills by exploring 
+       frameworks like Laravel 11. My adaptability across tech stacks
+        allows me to deliver solutions independently and efficiently, always with a focus on scalability and impact.
       </motion.p>
       <motion.p
        initial={{ opacity: 0, y: 50 }}
@@ -171,8 +172,8 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.70 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6'>
-        I’m also eager to expand my skills in cloud technologies, 
-        as I believe they play a vital role in building scalable, efficient software solutions.
+       Beyond web development, I’m actively expanding my expertise in cloud technologies and DevOps, areas
+        I’m highly passionate about and see as essential to building modern, scalable software solutions.
 
 
       </motion.p>
@@ -248,6 +249,29 @@ const certs = [
   </span>
    
     <div className='flex flex-row justify-between items-center -mt-3'>
+      <strong>Software Developer</strong>
+      <div className='text-[10px] dark:bg-blue-400 dark:text-black bg-blue-100 py-1 px-2 text-center rounded-full '>Oct 2025</div>
+    </div> 
+    <h1 className='text-xs mt-1'>Audio Video Integrations LLC</h1>
+    <p className='mt-4 text-sm leading-5'>
+     Engineered the CRM frontend with React, TypeScript, and React Query, ensuring scalability, maintainability, and long-term adaptability.
+    </p>
+  </motion.li>
+
+    <motion.li
+  initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.30 }}
+    viewport={{ once: true, amount: 0.3 }}
+  className="relative">
+    
+
+  <span className='relative flex size-3 -left-[30px] top-1'>
+     <span className=" absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+     <span className='relative inline-flex size-3 rounded-full bg-sky-500'></span>
+  </span>
+   
+    <div className='flex flex-row justify-between items-center -mt-3'>
       <strong>IT and Infrastructure</strong>
       <div className='text-[10px] dark:bg-blue-400 dark:text-black bg-blue-100 py-1 px-2 text-center rounded-full '>April 2025</div>
     </div> 
@@ -256,6 +280,7 @@ const certs = [
       Led the complete revamp of company’s website, handling both frontend and backend development.
     </p>
   </motion.li>
+  
 
   <motion.li 
    initial={{ opacity: 0, y: 50 }}

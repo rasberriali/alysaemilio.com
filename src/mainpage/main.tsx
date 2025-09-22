@@ -3,8 +3,8 @@ import profile from "../assets/files/profile.jpg"
 import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
-import resume from "../assets/files/Resume.png"
-import resumepdf from "../assets/files/AlysaEmilio - Software Engineer.pdf"
+import resume from "../assets/files/AlysaEmilio.png"
+import resumepdf from "../assets/files/AlysaEmilio.pdf"
 
 
 interface MainProps {
@@ -60,7 +60,7 @@ function Main({ theme, setTheme }: MainProps) {
               <h2 className="xl:text-sm text-[10px] ">Calamba City, Laguna</h2>
             </div>
             <h3 className="xl:text-base text-[14px] font-normal">
-              Bs Computer Engineer and an Entry-level Software Engineer
+              Software Engineer and a Computer Engineer Graduate
             </h3>
 
             <div className="grid grid-cols-2 grid-rows-1 gap-3 md:w-2/5 mt-2 ">
