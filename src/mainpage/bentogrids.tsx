@@ -226,7 +226,6 @@ const certs = [
        <div className="text-xl font-bold">Experience</div>
               </div>
        
-        <div className="text-sm font-light">Internships</div>
         
         </div>
         
