@@ -155,7 +155,7 @@ const experience = [
   }
 ];
 
-const [expIndex, setExpIndex] = useState(0);
+// const [expIndex, setExpIndex] = useState(0);
 // const visibleExperiences = experience.slice(expIndex, expIndex + 3);
 
 // const nextExp = () => {
