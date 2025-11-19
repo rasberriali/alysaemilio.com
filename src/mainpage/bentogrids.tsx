@@ -121,6 +121,62 @@ const certs = [
     certsImages: mern,
   },
 ]
+
+const experience = [
+  {
+    role: "Full Stack Developer",
+    date: "Present",
+    company: "CaliRocks",
+    desc: "Handle Front and Backend building a multi-tenant SaaS platform similar to Launch27."
+  },
+  {
+    role: "Software Developer",
+    date: "Sept 2025",
+    company: "Audio Video Integrations LLC",
+    desc: "Engineered the CRM frontend with React, TypeScript, and React Query, ensuring scalability, maintainability, and long-term adaptability."
+  },
+  {
+    role: "IT and Infrastructure",
+    date: "April 2025",
+    company: "Embedded Silicon Technology Solutions Corp.",
+    desc: "Led the complete revamp of company’s website, handling both frontend and backend development."
+  },
+  {
+    role: "Frontend Developer",
+    date: "January 2025",
+    company: "Befiend (FKA Edufied)",
+    desc: "Contributed in building the FliPass system for Edufied, collaborating remotely with an experienced team."
+  },
+  {
+    role: "Freelacer",
+    date: "November 2022",
+    // company: "TechPrime Solutions",
+    desc: "Catered various programming activities /projects using Java, Python, Django, and others."
+  }
+];
+
+const [expIndex, setExpIndex] = useState(0);
+// const visibleExperiences = experience.slice(expIndex, expIndex + 3);
+
+// const nextExp = () => {
+//   if (expIndex + 3 < experience.length) setExpIndex(expIndex + 1);
+// };
+
+// const prevExp = () => {
+//   if (expIndex > 0) setExpIndex(expIndex - 1);
+// };
+
+
+const [page, setPage] = useState(0);
+const itemsPerPage = 4;
+
+const totalPages = Math.ceil(experience.length / itemsPerPage);
+
+const paginatedData = experience.slice(
+  page * itemsPerPage,
+  page * itemsPerPage + itemsPerPage
+);
+
   return (
     <div className="container h-full grid grid-cols-1 md:grid-cols-6 grid-rows-1 gap-4 mt-10 mb-20">
 <Card className="md:col-span-4 row-span-1 flex flex-col justify-between dark:bg-neutral-800/40">
@@ -148,12 +204,7 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.30 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6 '>
-      I’m a Computer Engineer passionate about software development, with a strong focus 
-      on building scalable and efficient web applications. Currently, I work as a Software
-       Developer at a US-based company, where I lead frontend engineering using React, 
-       TypeScript, and React Query. I collaborate closely with the CEO and leadership 
-       team to translate business vision into workflows, integrate APIs, and deliver 
-       maintainable, production-ready solutions.
+      I’m a Fullstack Developer and Computer Engineer passionate about building high-quality, scalable, and efficient web applications. Throughout my career, I’ve handled major modules such as leads management, quotations, sales orders, inventories, invoicing workflows, and UI/UX improvements—features I’ve successfully implemented in both my first and second jobs. I develop and maintain RESTful applications and ensure smooth, reliable integration across all parts of a system.
       </motion.p>
       <motion.p
        initial={{ opacity: 0, y: 50 }}
@@ -161,10 +212,7 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.50 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6'>
-       I primarily work with the MERN stack (MongoDB, Express.js, React.js, Node.js) 
-       for full-stack development, while also sharpening my backend skills by exploring 
-       frameworks like Laravel 11. My adaptability across tech stacks
-        allows me to deliver solutions independently and efficiently, always with a focus on scalability and impact.
+       In my current role, I’ve built the entire bookings system, connected customers and bookings seamlessly, and continued improving lead-related features by setting up funnels and streamlining user flows. I collaborate closely with leadership to translate business requirements into clear workflows and deliver maintainable, production-ready solutions.
       </motion.p>
       <motion.p
        initial={{ opacity: 0, y: 50 }}
@@ -172,10 +220,7 @@ const certs = [
     transition={{ duration: 0.5, delay: 0.70 }}
     viewport={{ once: true, amount: 0.3 }}
       className='text-sm leading-6'>
-       Beyond web development, I’m actively expanding my expertise in cloud technologies and DevOps, areas
-        I’m highly passionate about and see as essential to building modern, scalable software solutions.
-
-
+      I work across both frontend and backend, and my adaptability across different stacks allows me to build solutions independently and efficiently. Beyond development, I’m also expanding my knowledge in cloud technologies and DevOps—areas I see as essential for creating modern, scalable software systems.
       </motion.p>
     
     </CardContent>
@@ -206,124 +251,80 @@ const certs = [
 
 
       {/* Experience */}
-      <Card className="md:col-span-2 row-span-2 dark:bg-neutral-800/40">
-        <CardContent className="space-y-4">
-          <div>
-           <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.15 }}
-    viewport={{ once: true, amount: 0.3 }}
-           className='flex flex-row gap-2  justify-between items-center'>
-            <div className='flex flex-col gap-2 items-start mb-2'>
-              <div className='flex flex-row gap-2 justify-between items-center'>
-                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 3.5H4C2.89543 3.5 2 4.39543 2 5.5V15.5C2 16.6046 2.89543 17.5 4 17.5H20C21.1046 17.5 22 16.6046 22 15.5V5.5C22 4.39543 21.1046 3.5 20 3.5Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M8 21.5H16" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12 17.5V21.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+      {/* Experience */}
+<Card className="md:col-span-2 row-span-2 dark:bg-neutral-800/40">
+  <CardContent className="space-y-4">
+    {/* Header with Chevrons */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="flex justify-between items-center"
+    >
+      <div className="flex items-center gap-2">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+          <path d="M20 3.5H4C2.89543 3.5 2 4.39543 2 5.5V15.5C2 16.6046 2.89543 17.5 4 17.5H20C21.1046 17.5 22 16.6046 22 15.5V5.5C22 4.39543 21.1046 3.5 20 3.5Z" stroke="currentColor" strokeWidth="1.25"/>
+          <path d="M8 21.5H16" stroke="currentColor" strokeWidth="1.25"/>
+          <path d="M12 17.5V21.5" stroke="currentColor" strokeWidth="1.25"/>
         </svg>
-   
-       <div className="text-xl font-bold">Experience</div>
-              </div>
-       
-        
-        </div>
-        
-      
- 
-       
-      </motion.div>
-          <ul className="relative border-l border-gray-300 pl-6 space-y-8 mt-4">
-  <motion.li
-  initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.30 }}
-    viewport={{ once: true, amount: 0.3 }}
-  className="relative">
-    
+        <h2 className="text-xl font-bold">Experience</h2>
+      </div>
 
-  <span className='relative flex size-3 -left-[30px] top-1'>
-     <span className=" absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-     <span className='relative inline-flex size-3 rounded-full bg-sky-500'></span>
-  </span>
-   
-    <div className='flex flex-row justify-between items-center -mt-3'>
-      <strong>Software Developer</strong>
-      <div className='text-[10px] dark:bg-blue-400 dark:text-black bg-blue-100 py-1 px-2 text-center rounded-full '>Oct 2025</div>
-    </div> 
-    <h1 className='text-xs mt-1'>Audio Video Integrations LLC</h1>
-    <p className='mt-4 text-sm leading-5'>
-     Engineered the CRM frontend with React, TypeScript, and React Query, ensuring scalability, maintainability, and long-term adaptability.
-    </p>
-  </motion.li>
+      <div className="flex items-center gap-2">
+        {/* LEFT */}
+        <button
+          disabled={page === 0}
+          onClick={() => setPage((p) => Math.max(p - 1, 0))}
+          className="p-1 disabled:opacity-30"
+        >
+          <svg width="20" height="20" fill="none">
+            <path d="M12 16L8 12L12 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
 
-    <motion.li
-  initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.30 }}
-    viewport={{ once: true, amount: 0.3 }}
-  className="relative">
-    
+        {/* RIGHT */}
+        <button
+          disabled={page === totalPages - 1}
+          onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))}
+          className="p-1 disabled:opacity-30"
+        >
+          <svg width="20" height="20" fill="none">
+            <path d="M8 16L12 12L8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </motion.div>
 
-  <span className='relative flex size-3 -left-[30px] top-1'>
-     <span className=" absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-     <span className='relative inline-flex size-3 rounded-full bg-sky-500'></span>
-  </span>
-   
-    <div className='flex flex-row justify-between items-center -mt-3'>
-      <strong>IT and Infrastructure</strong>
-      <div className='text-[10px] dark:bg-blue-400 dark:text-black bg-blue-100 py-1 px-2 text-center rounded-full '>April 2025</div>
-    </div> 
-    <h1 className='text-xs mt-1'>Embedded Silicon Technology Solutions Corp.</h1>
-    <p className='mt-4 text-sm leading-5'>
-      Led the complete revamp of company’s website, handling both frontend and backend development.
-    </p>
-  </motion.li>
-  
+    {/* Experience Items with Slide Animation */}
+    <motion.ul
+      key={page}
+      initial={{ opacity: 0, x: 40 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -40 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="relative border-l border-gray-300 pl-6 space-y-8 mt-4"
+    >
+      {paginatedData.map((exp, i) => (
+        <li key={i} className="relative">
+          <span className="relative flex size-3 -left-[30px] top-1">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+            <span className="relative inline-flex size-3 rounded-full bg-sky-500" />
+          </span>
 
-  <motion.li 
-   initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.50 }}
-    viewport={{ once: true, amount: 0.3 }}
-  className="relative">
-      <span className='relative flex size-3 -left-[30px] top-1'>
-     <span className=" absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-     <span className='relative inline-flex size-3 rounded-full bg-sky-500'></span>
-  </span>
-    <div className='flex flex-row justify-between items-center -mt-3'>
-      <strong>Frontend Developer</strong>
-      <div className='text-[10px] dark:bg-blue-400 dark:text-black bg-blue-100 py-1 px-2 text-center rounded-full '>January 2025</div>
-    </div> 
-    <h1 className='text-xs mt-1'>Befiend (FKA Edufied)</h1>
-    <p className='mt-4 text-sm leading-5'>
-      Contributed in building the FliPass system for Edufied, collaborating remotely with an experienced team.
-    </p>
-  </motion.li>
+          <div className="flex justify-between items-center -mt-3">
+            <strong>{exp.role}</strong>
+            <div className="text-[10px] bg-blue-100 dark:bg-blue-400 dark:text-black py-1 px-2 rounded-full">
+              {exp.date}
+            </div>
+          </div>
 
-  <motion.li 
-  initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.70 }}
-    viewport={{ once: true, amount: 0.3 }}
-  className="relative">
-      <span className='relative flex size-3 -left-[30px] top-1'>
-     <span className=" absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-     <span className='relative inline-flex size-3 rounded-full bg-sky-500'></span>
-  </span>
-    <div className='flex flex-row justify-between items-center -mt-3'>
-      <strong>Freelancer</strong>
-      <div className='text-[10px] dark:bg-blue-400 dark:text-black bg-blue-100 py-1 px-2 text-center rounded-full '>November 2022</div>
-    </div> 
-    <p className='mt-2 text-sm leading-5'>
-      Catered various programming activities /projects using Java, Python, Django, and others.
-    </p>
-  </motion.li>
-</ul>
-</div>
-
-        </CardContent>
-      </Card>
+          <h1 className="text-xs mt-1">{exp.company}</h1>
+          <p className="mt-4 text-sm leading-5">{exp.desc}</p>
+        </li>
+      ))}
+    </motion.ul>
+  </CardContent>
+</Card>
 
       {/* Projects */}
          <Card className="md:col-span-6 dark:bg-neutral-800/40 ">
