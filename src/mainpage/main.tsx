@@ -3,8 +3,10 @@ import profile from "../assets/files/profile.jpg"
 import email from "../assets/icons/email.svg"
 import Logos from "../mainpage/logos"
 import Bentogrids from "./bentogrids"
-import resume from "../assets/files/AlysaEmilio.png"
-import resumepdf from "../assets/files/AlysaEmilio.pdf"
+import resume from "../assets/files/Resumee.png"
+import resumeee from "../assets/files/Resumeee.png"
+import resumeeee from "../assets/files/Resumeeeee.png"
+import resumepdf from "../assets/files/ALYSA EMILIO -Resume.pdf"
 
 
 interface MainProps {
@@ -170,6 +172,20 @@ function Main({ theme, setTheme }: MainProps) {
         <div className="relative w-full xl:min-h-[80vh] min-h-[20vh] max-w-[900px] mx-auto rounded-xl ring-1 ring-gray-300 dark:ring-gray-600 shadow-md overflow-auto scroll-smooth">
           <img
             src={resume}
+            alt="Resume Preview"
+            className="w-[100%] h-auto object-contain select-none "
+            title="Resume Preview"
+            style={{ userSelect: 'none' }}
+          />
+           <img
+            src={resumeee}
+            alt="Resume Preview"
+            className="w-[100%] h-auto object-contain select-none "
+            title="Resume Preview"
+            style={{ userSelect: 'none' }}
+          />
+           <img
+            src={resumeeee}
             alt="Resume Preview"
             className="w-[100%] h-auto object-contain select-none "
             title="Resume Preview"
